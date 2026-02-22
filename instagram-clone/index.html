@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAV BAR -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <a href="index.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/800px-Instagram_logo.svg.png" alt="Instagram" class="logo-img"/></a>
+      </div>
+      <div class="nav-search">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" placeholder="Search" class="search-input" id="searchInput"/>
+      </div>
+      <div class="nav-icons">
+        <a href="index.html" class="nav-icon active" title="Home"><i class="fas fa-home"></i></a>
+        <a href="#" class="nav-icon" title="Messages" id="msgBtn"><i class="fas fa-paper-plane"></i></a>
+        <a href="explore.html" class="nav-icon" title="Explore"><i class="fas fa-compass"></i></a>
+        <a href="#" class="nav-icon" title="Reels"><i class="fas fa-film"></i></a>
+        <a href="#" class="nav-icon" title="Notifications" id="notifBtn"><i class="fas fa-heart"></i></a>
+        <a href="profile.html" class="nav-icon" title="Profile">
+          <img src="https://i.pravatar.cc/32?img=5" alt="Profile" class="nav-avatar"/>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- NOTIFICATION DROPDOWN -->
+  <div class="notif-dropdown" id="notifDropdown">
+    <h4>Notifications</h4>
+    <div class="notif-item">
+      <img src="https://i.pravatar.cc/40?img=1" alt="user"/>
+      <span><strong>alex_photo</strong> liked your photo.</span>
+      <span class="notif-time">2m</span>
+    </div>
+    <div class="notif-item">
+      <img src="https://i.pravatar.cc/40?img=2" alt="user"/>
+      <span><strong>travel_vibes</strong> started following you.</span>
+      <span class="notif-time">15m</span>
+    </div>
+    <div class="notif-item">
+      <img src="https://i.pravatar.cc/40?img=3" alt="user"/>
+      <span><strong>foodie_gram</strong> commented: "Amazing shot!"</span>
+      <span class="notif-time">1h</span>
+    </div>
+    <div class="notif-item">
+      <img src="https://i.pravatar.cc/40?img=4" alt="user"/>
+      <span><strong>nature_lens</strong> liked your photo.</span>
+      <span class="notif-time">3h</span>
+    </div>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <main class="main-layout">
+
+    <!-- FEED SECTION -->
+    <section class="feed-section">
+
+      <!-- STORIES -->
+      <div class="stories-container">
+        <div class="story your-story">
+          <div class="story-avatar-wrap">
+            <img src="https://i.pravatar.cc/56?img=5" alt="Your Story" class="story-avatar"/>
+            <div class="add-story-btn"><i class="fas fa-plus"></i></div>
+          </div>
+          <span>Your Story</span>
+        </div>
+        <div class="story" onclick="openStory(0)">
+          <div class="story-avatar-wrap story-ring">
+            <img src="https://i.pravatar.cc/56?img=1" alt="alex_photo" class="story-avatar"/>
+          </div>
+          <span>alex_photo</span>
+        </div>
+        <div class="story" onclick="openStory(1)">
+          <div class="story-avatar-wrap story-ring">
+            <img src="https://i.pravatar.cc/56?img=2" alt="travel_vibes" class="story-avatar"/>
+          </div>
+          <span>travel_vibes</span>
+        </div>
+        <div class="story" onclick="openStory(2)">
+          <div class="story-avatar-wrap story-ring">
+            <img src="https://i.pravatar.cc/56?img=3" alt="foodie_gram" class="story-avatar"/>
+          </div>
+          <span>foodie_gram</span>
+        </div>
+        <div class="story" onclick="openStory(3)">
+          <div class="story-avatar-wrap story-ring">
+            <img src="https://i.pravatar.cc/56?img=4" alt="nature_lens" class="story-avatar"/>
+          </div>
+          <span>nature_lens</span>
+        </div>
+        <div class="story" onclick="openStory(4)">
+          <div class="story-avatar-wrap story-ring">
+            <img src="https://i.pravatar.cc/56?img=6" alt="city_shots" class="story-avatar"/>
+          </div>
+          <span>city_shots</span>
+        </div>
+        <div class="story" onclick="openStory(5)">
+          <div class="story-avatar-wrap story-ring">
+            <img src="https://i.pravatar.cc/56?img=7" alt="sunset_lover" class="story-avatar"/>
+          </div>
+          <span>sunset_lover</span>
+        </div>
+      </div>
+
+      <!-- POSTS -->
+      <div class="posts-container" id="postsContainer">
+        <!-- Posts injected by JS -->
+      </div>
+
+    </section>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <!-- Profile Summary -->
+      <div class="sidebar-profile">
+        <img src="https://i.pravatar.cc/56?img=5" alt="Profile" class="sidebar-avatar"/>
+        <div class="sidebar-profile-info">
+          <a href="profile.html" class="sidebar-username">jyosika_s</a>
+          <span class="sidebar-name">Jyosika S</span>
+        </div>
+        <button class="switch-btn">Switch</button>
+      </div>
+
+      <!-- Suggestions -->
+      <div class="suggestions-header">
+        <span>Suggested for you</span>
+        <a href="#">See All</a>
+      </div>
+      <div class="suggestions-list" id="suggestionsList">
+        <!-- Injected by JS -->
+      </div>
+
+      <!-- Footer Links -->
+      <div class="sidebar-footer">
+        <a href="#">About</a> · <a href="#">Help</a> · <a href="#">Press</a> · <a href="#">API</a> · <a href="#">Jobs</a> · <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Locations</a> · <a href="#">Language</a>
+        <p>© 2024 INSTAGRAM FROM META</p>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- STORY MODAL -->
+  <div class="story-modal" id="storyModal">
+    <div class="story-modal-overlay" onclick="closeStory()"></div>
+    <div class="story-modal-content">
+      <div class="story-progress-bar">
+        <div class="story-progress" id="storyProgress"></div>
+      </div>
+      <div class="story-header">
+        <img src="" alt="" id="storyUserAvatar" class="story-modal-avatar"/>
+        <span id="storyUsername" class="story-modal-username"></span>
+        <span id="storyTime" class="story-modal-time"></span>
+        <button class="story-close-btn" onclick="closeStory()"><i class="fas fa-times"></i></button>
+      </div>
+      <img src="" alt="Story" id="storyImage" class="story-modal-image"/>
+      <button class="story-nav prev-story" onclick="prevStory()"><i class="fas fa-chevron-left"></i></button>
+      <button class="story-nav next-story" onclick="nextStory()"><i class="fas fa-chevron-right"></i></button>
+      <div class="story-reply">
+        <input type="text" placeholder="Send message" class="story-reply-input"/>
+        <button><i class="fas fa-paper-plane"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMMENT MODAL -->
+  <div class="comment-modal" id="commentModal">
+    <div class="comment-modal-overlay" onclick="closeCommentModal()"></div>
+    <div class="comment-modal-content">
+      <div class="comment-modal-header">
+        <h3>Comments</h3>
+        <button onclick="closeCommentModal()"><i class="fas fa-times"></i></button>
+      </div>
+      <div class="comment-modal-body" id="commentModalBody">
+        <!-- Comments injected by JS -->
+      </div>
+      <div class="comment-modal-footer">
+        <img src="https://i.pravatar.cc/32?img=5" alt="You" class="comment-avatar"/>
+        <input type="text" placeholder="Add a comment..." id="commentModalInput" class="comment-modal-input"/>
+        <button class="post-comment-btn" id="postCommentBtn">Post</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
